@@ -1,0 +1,72 @@
+---
+import menuIcon from '../assets/menu_icon.svg';
+
+const usableNavigator = typeof window !== 'undefined' && typeof window.navigator !== 'undefined';
+
+// @ts-expect-error
+const isMobile = usableNavigator && navigator.userAgentData.mobile;
+---
+
+<div class="header">
+  <div class="header-wrapper">
+    <h1>v-kansai</h1>
+    {isMobile && (
+      <div class="mobile-links">
+        <img src={menuIcon.src} alt="" />
+      </div>
+    )}
+    {!isMobile && (
+      <div class="links">
+        <ul>
+          <li>
+            <a href="https://vuekansai.connpass.com/event/" target="_blank" rel="noreferrer">
+              勉強会一覧
+            </a>
+          </li>
+        </ul>
+      </div>
+    )}
+  </div>
+</div>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    padding: 20px;
+    z-index: 99;
+    background-color: #fff;
+    color: #35495E;
+  }
+  .header-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  .header h1 {
+    font-size: 32px;
+    font-weight: 700;
+  }
+  .header .links {
+    font-size: 24px;
+    font-weight: 500;
+  }
+  .header .links ul {
+    display: flex;
+    gap: 24px;
+  }
+  .header .links ul li {
+    list-style: none;
+  }
+  .header .links a {
+    color: #F17C67;
+    text-decoration: none;
+  }
+  .header .links a:hover {
+    opacity: 0.6;
+    transition: 0.2s;
+  }
+  .header .mobile-links {
+    display: flex;
+    justify-content: center;
+  }
+</style>
