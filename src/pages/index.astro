@@ -20,6 +20,11 @@ const pastEvents = data.events.filter((e: Event) => new Date(e.started_at) < new
       <span>開催予定の勉強会</span>
   	</h2>
     <ul role="list" class="link-card-grid">
+      {heldEvents.length === 0 && (
+        <p class="instructions">
+          There are currently no events available.
+        </p>
+      )}
       {heldEvents.map((e: Event) => (
         <Card
           href={e.event_url}
