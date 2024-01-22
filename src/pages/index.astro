@@ -17,8 +17,8 @@ const pastEvents = data.events.filter((e: Event) => new Date(e.started_at) < new
       We mainly communicate on the <code>#v-kansai</code> channel of the Vue.js Japan user group Slack <strong>vuejs-jp</strong> Slack.
     </p>
     <h2 id="held">
-      <span>Held Events</span>
-	</h2>
+      <span>開催予定の勉強会</span>
+  	</h2>
     <ul role="list" class="link-card-grid">
       {heldEvents.map((e: Event) => (
         <Card
@@ -28,9 +28,9 @@ const pastEvents = data.events.filter((e: Event) => new Date(e.started_at) < new
         />
       ))}
     </ul>
-	<h2 id="past">
-      <span>Past Events</span>
-	</h2>
+  	<h2 id="past">
+      <span>これまでに開催した勉強会</span>
+	  </h2>
     <ul role="list" class="link-card-grid">
       {pastEvents.map((e: Event) => (
         <Card
