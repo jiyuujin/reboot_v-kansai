@@ -1,6 +1,8 @@
 {
   "name": "vuekansai-community",
-  "version": "0.0.1",
+  "description": "",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
     "dev": "astro dev",
     "build": "astro check && astro build",
